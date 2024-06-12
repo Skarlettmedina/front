@@ -1,10 +1,10 @@
 {
-    "rewrites":[
-        { "source": "/(.*)", "destination": "/"}
+    "rewrites": [
+        { "source": "/(.*)", "destination": "/" }
     ],
     "redirects": [
-        {"source": "/old-route", "destination": "/new-route",
-    "pemanent": true}
+        { "source": "/old-route", "destination": "/new-route",
+    "pemanent": true }
     ],
     "headers": [
         {
