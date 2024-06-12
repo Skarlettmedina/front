@@ -1,0 +1,17 @@
+{
+    "rewrites":[
+        { "source": "/(.*)", "destination": "/"}
+    ],
+    "redirects": [
+        {"source": "/old-route", "destination": "/new-route",
+    "pemanent": true}
+    ],
+    "headers": [
+        {
+            "source": "/(.*)",
+            "headers": [
+                { "key": "Cache-Control", "value": "no-cache" }
+            ]
+        }
+    ]
+}
