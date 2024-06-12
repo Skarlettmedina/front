@@ -14,7 +14,7 @@ const registrarCompras = () => {
 
 console.log(registrarCompras);
 
-    const url = "http://localhost:9000/api/detalle/"
+    const url = "https://proyecto-k4bf.onrender.com/api/detalle/"
 
     let token = "";
     const cookieToken = document.cookie;
@@ -80,7 +80,7 @@ function comprarProducto() {
     const cantidad = document.getElementById('cantidad').value;
     const precio = document.getElementById('precio').value;
 
-    const url = "http://localhost:9000/api/detalle";
+    const url = "https://proyecto-k4bf.onrender.com/api/detalle";
     let token = "";
     const cookieToken = document.cookie;
 

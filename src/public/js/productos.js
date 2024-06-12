@@ -40,7 +40,7 @@ const registrarProductos = () => {
     const precio = document.getElementById('precio').value;
     const stock = document.getElementById('stock').value;
 
-    const url = "http://localhost:9000/api/productos";
+    const url = "https://proyecto-k4bf.onrender.com/api/productos";
 
     let token = "";
     const cookieToken = document.cookie;
@@ -130,7 +130,7 @@ function modificarProducto() {
     const precio = document.getElementById('precio').value;
     const stock = document.getElementById('stock').value;
 
-    const url = "http://localhost:9000/api/productos";
+    const url = "https://proyecto-k4bf.onrender.com/api/productos";
     let token = "";
     const cookieToken = document.cookie;
 
@@ -214,7 +214,7 @@ const borrarProducto = async (event) => {
         'Content-Type': 'application/json'
     };
 
-    const url = "http://localhost:9000/api/productos";
+    const url = "https://proyecto-k4bf.onrender.com/api/productos";
     const option = {
         method: "DELETE",
         body: JSON.stringify({ "idproducto": codigo }),

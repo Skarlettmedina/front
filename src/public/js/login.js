@@ -14,7 +14,7 @@ const logueese = () => {
         })
     };
 
-    let url = "http://localhost:9000/api/login";
+    let url = "https://proyecto-k4bf.onrender.com/api/login";
 
     fetch(url, option)
         .then(res => res.json())
@@ -40,7 +40,7 @@ const registrarUsuario2 = () => {
         return
     }
 
-    const url = "http://localhost:9000/api/registro";
+    const url = "https://proyecto-k4bf.onrender.com/api/registro";
 
     const headers = {
         'Content-Type': 'application/json'

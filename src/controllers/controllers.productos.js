@@ -1,6 +1,6 @@
 export const productos = (req, res)=>{
 
-   const url = "http://localhost:9000/api/productos";
+   const url = "https://proyecto-k4bf.onrender.com/api/productos";
     
     fetch(url)
     .then(respuesta => respuesta.json())

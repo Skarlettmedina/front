@@ -4,7 +4,7 @@ const registrarCompra = () => {
     const cantidades = [2, 3]; // Cantidades de los productos
     const precios = [20000, 12000]; // Precios de los productos
 
-    const url = "http://localhost:9000/api/compras/registrar";
+    const url = "https://proyecto-k4bf.onrender.com/api/compras/registrar";
 
     const options = {
         method: "POST",

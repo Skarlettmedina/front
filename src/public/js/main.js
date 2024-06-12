@@ -46,7 +46,7 @@ const registrarUsuario = () => {
     }
 
 
-    const url = "http://localhost:9000/api/usuario"
+    const url = "https://proyecto-k4bf.onrender.com/api/usuario"
 
     let token = "";
     const cookieToken = document.cookie;
@@ -119,7 +119,7 @@ const modificarUsuario = () => {
     }
 
 
-    const url = "http://localhost:9000/api/usuario"
+    const url = "https://proyecto-k4bf.onrender.com/api/usuario"
     let token = "";
     const cookieToken = document.cookie;
 
@@ -196,7 +196,7 @@ const borrar = async (event) => {
         'Content-Type': 'application/json'
     };
 
-    const url = "http://localhost:9000/api/usuario";
+    const url = "https://proyecto-k4bf.onrender.com/api/usuario";
     const option = {
         method: "DELETE",
         body: JSON.stringify({ "idusuario": codigo }),

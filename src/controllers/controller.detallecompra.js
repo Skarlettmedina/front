@@ -1,6 +1,6 @@
 export const detalle = (req, res)=>{
 
-    const url = "http://localhost:9000/api/detalle";
+    const url = "https://proyecto-k4bf.onrender.com/api/detalle";
      
      fetch(url)
      .then(respuesta => respuesta.json())
