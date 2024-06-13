@@ -46,10 +46,10 @@
                                 <td data-label="Precio"><%= registro.precio %></td>
                                 <td data-label="Stock"><%= registro.stock %></td>
                                 <td data-label="Opciones">
-                                    <button onclick="cargarProducto(event)" class="btn btn bg-purple btn-sm" data-toggle="modal" data-target="#modificarproducto">
+                                    <button onclick="cargarProducto(event)" class="btn btn bg-purple btn-sm btn-editar" data-toggle="modal" data-target="#modificarproducto">
                                         <i class="fa fa-pencil-square"></i> Editar
                                     </button>
-                                    <button onclick="eliminarProducto(event)" class="btn btn-danger btn-sm">
+                                    <button onclick="eliminarProducto(event)" class="btn btn-danger btn-sm btn-eliminar">
                                         <i class="fa fa-trash"></i> Eliminar
                                     </button>
                                     <button onclick="cargarCompra(event)" class="btn btn-success btn-sm" data-toggle="modal" data-target="#compraproducto">
@@ -69,7 +69,6 @@
     </div>
 </section>
 
-  
 <!-- Modal para modificar producto -->
 <div class="modal fade" id="modificarproducto" tabindex="-1" role="dialog" aria-labelledby="modificarProductoLabel">
     <div class="modal-dialog" role="document">
@@ -137,7 +136,6 @@
                         <label for="totalcompra">Total: </label>
                         <span id="totalcompra">$0.00</span>
                     </div>
-                    
                 </form>
             </div>
             <div class="modal-footer bg-navy">
@@ -150,10 +148,3 @@
 
 <script src="/js/productos.js"></script>
 <%- include("partials/partials.dash.footer.ejs") %>
-
-</body>
-</html>
-    
-  <!-- </body>
-  </html> -->  <!-- </body>
-  </html> -->

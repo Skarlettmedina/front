@@ -60,19 +60,19 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function obtenerToken() {
-    // Obtener todas las cookies del navegador
-    const cookies = document.cookie.split(';');
-    
-    // Buscar la cookie que contiene el token
-    let token = '';
-    cookies.forEach(cookie => {
-        const [nombre, valor] = cookie.split('=');
-        if (nombre.trim() === 'token') {
-            token = valor;
-        }
-    });
+  // Obtener todas las cookies del navegador
+  const cookies = document.cookie.split(';');
+  
+  // Buscar la cookie que contiene el token
+  let token = '';
+  cookies.forEach(cookie => {
+    const [nombre, valor] = cookie.split('=');
+    if (nombre.trim() === 'token') {
+      token = valor;
+    }
+  });
 
-    return token;
+  return token;
 }
 
 function obtenerRolesDesdeToken(token) {
@@ -93,36 +93,46 @@ function validarRolAdministrador() {
 
   // Verificar si el token existe y contiene información de roles
   if (token) {
-      const roles = obtenerRolesDesdeToken(token);
-      console.log('Roles:', roles); // Log para verificar los roles extraídos del token
-      // Comprobar si el rol de administrador está presente en los roles del usuario
-      const esAdministrador = roles.includes('Administrador');
+    const roles = obtenerRolesDesdeToken(token);
+    console.log('Roles:', roles); // Log para verificar los roles extraídos del token
+    // Comprobar si el rol de administrador está presente en los roles del usuario
+    const esAdministrador = roles.includes('Administrador');
 
-      // Obtener el elemento li que representa el treeview
-      const treeviewElement = document.querySelector('.treeview.usuarios');
-      const crearProductos = document.querySelector('.crear-productos');
-      const mostrarVenta = document.querySelector('.mostrar-venta');
+    // Obtener el elemento li que representa el treeview
+    const treeviewUsuarios = document.querySelector('.treeview.usuarios');
+    const treeviewProductos = document.querySelector('.treeview.productos');
+    const crearProductos = document.querySelector('.crear-productos');
 
-
-
-
-      // Si el usuario no es administrador, ocultar el elemento
-      if (!esAdministrador) {
-          console.log('Usuario no es administrador. Ocultando opción de Gestor de Usuarios.');
-          if (treeviewElement) {
-              treeviewElement.classList.add('hidden');
-              crearProductos.classList.add('h');
-
-          } else {
-              console.error('Elemento de Gestor de Usuarios no encontrado.');
-          }
+    // Si el usuario no es administrador, ocultar el elemento de Gestor de Usuarios y Crear Producto
+    if (!esAdministrador) {
+      console.log('Usuario no es administrador. Ocultando opciones.');
+      if (treeviewUsuarios) {
+        treeviewUsuarios.classList.add('hidden');
       } else {
-          console.log('Usuario es administrador. Mostrando opción de Gestor de Usuarios.');
+        console.error('Elemento de Gestor de Usuarios no encontrado.');
       }
+      if (crearProductos) {
+        crearProductos.classList.add('hidden');
+      } else {
+        console.error('Elemento Crear Producto no encontrado.');
+      }
+
+      // Ocultar botones de editar y eliminar
+      document.querySelectorAll('.btn-editar, .btn-eliminar').forEach(btn => {
+        btn.classList.add('hidden');
+      });
+    } else {
+      console.log('Usuario es administrador. Mostrando opciones.');
+    }
   } else {
-      console.log('Token no encontrado.');
+    console.log('Token no encontrado.');
   }
 }
+
+// Llamar a la función de validación al cargar la página
+document.addEventListener('DOMContentLoaded', validarRolAdministrador);
+
+
 </script>
 </body>
 </html>
