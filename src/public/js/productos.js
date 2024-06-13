@@ -112,16 +112,6 @@ function calcularTotalCompra() {
     document.getElementById('totalcompra').innerText = `Total: $${total.toFixed(2)}`;
 }
 
-// Función para comprar productos
-const comprarProducto = () => {
-    const nombrep = document.getElementById('nombrepcompra').value;
-    const cantidad = document.getElementById('cantidadcompra').value;
-    const precio = document.getElementById('preciocompra').value;
-
-    const url = `/factura?nombrep=${nombrep}&precio=${precio}`;
-    window.open(url);
-};
-
 // Función para modificar el producto
 function modificarProducto() {
     const idproducto = document.getElementById('idproducto').value;
@@ -241,4 +231,17 @@ const borrarProducto = async (event) => {
 
     console.log("Retorno:", retorno);
     return retorno;
+};
+const reporte = () => {
+    // Obtener los valores del modal
+    const nombrep = document.getElementById('nombrepcompra').value;
+    const precio = document.getElementById('preciocompra').value;
+    const cantidad = document.getElementById('cantidadcompra').value;
+    const totalcompra = document.getElementById('totalcompra').textContent;
+
+    // Crear la URL para la factura, codificando los valores adecuadamente
+    const url = `/factura?nombrep=${encodeURIComponent(nombrep)}&precio=${encodeURIComponent(precio)}&cantidad=${encodeURIComponent(cantidad)}&totalcompra=${encodeURIComponent(totalcompra)}`;
+
+    // Abrir la URL en una nueva ventana
+    window.open(url);
 };
